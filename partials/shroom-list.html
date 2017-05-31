@@ -1,0 +1,13 @@
+<section>
+	<div>
+		<input class="shroom-list_search" type="text" ng-model="filterValue" placeholder="Search"/>
+		<label for="edible">Edible</label>
+		<input type="radio" name="edible" ng-model="query" value="true">
+		<label for="inedible">Inedible</label>
+		<input type="radio" name="inedible" ng-model="query" value="false">
+	</div>
+	<div ng-repeat="item in shrooms | filter: {name:filterValue} | filter: {edible:query}">
+	<h3>{{item.name}}</h3>
+	<p>{{item.description}}</p>
+	</div>
+</section>
